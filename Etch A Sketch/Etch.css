@@ -1,0 +1,20 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbars from appearing */
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  position: absolute; /* Positions instructions over the canvas so they don't push it down */
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  pointer-events: none; /* Allows drawing underneath the text */
+  font-family: sans-serif;
+}
+
+#draw {
+  display: block; /* Removes baseline inline spacing under the canvas */
+}

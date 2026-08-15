@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = 'black';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
-ctx.lineWidth = 30;
+ctx.lineWidth = 5;
 
 let isDrawing = false;
 let lastX = canvas.width / 2;
@@ -23,16 +23,16 @@ function draw(e){
     ctx.moveTo(lastX,lastY);
 
     if (e.key === 'a' || e.key === 'A'){
-        lastX -= 10;
+        lastX -= 5;
     }
     else if (e.key === 'd' || e.key === 'D'){
-        lastX += 10;
+        lastX += 5;
     }
     else if (e.key === 'ArrowRight'){
-        lastY -= 10;
+        lastY -= 5;
     }
     else if (e.key === 'ArrowLeft'){
-        lastY += 10;
+        lastY += 5;
     }
     else{
         return;
@@ -41,6 +41,19 @@ function draw(e){
     ctx.stroke();
 }
 
+function clear(e){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  lastX = canvas.width / 2;
+  lastY = canvas.height / 2;
+}
+
 window.addEventListener('keydown',draw);
 window.addEventListener('keydown', () => isDrawing = true);
 window.addEventListener('keyup',() => isDrawing = false);
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === ' '){
+        clear();
+    }
+});

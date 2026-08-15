@@ -1,20 +1,54 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevents scrollbars from appearing */
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
 }
 
-p {
-  position: absolute; /* Positions instructions over the canvas so they don't push it down */
-  top: 10px;
-  left: 10px;
+#controls {
+  height: 5%;
+  width: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#controls p, #bottom p {
+  position: static; 
   margin: 0;
-  pointer-events: none; /* Allows drawing underneath the text */
+  color: white;
   font-family: sans-serif;
 }
 
-#draw {
-  display: block; /* Removes baseline inline spacing under the canvas */
+#canvas {
+  height: 80%;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas#draw {
+  background-color: rgb(179, 176, 172);
+  width: 90%;
+  height: 90%;
+  border-radius: 30px;
+  display: block;
+}
+
+#bottom {
+  height: 10%;
+  width: 100%;
+
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
 }
